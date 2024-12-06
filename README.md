@@ -46,40 +46,23 @@ Ensure you have the following installed:
 ### **2. Clone the Repository**
 
 ```bash
-git clone <repository-link>
+git clone https://github.com/Shubham-Kumar1/irctc-workIndia.git
 cd irctc-railway-management
 
 Sure! Below is the content for a `.txt` file that includes setup instructions and steps to test the API endpoints.
 
 ---
 
-## **1. Prerequisites**
-
-Ensure the following tools are installed on your machine:
-
-- **Node.js**: Version 14 or higher.
-  - Verify by running `node -v` and `npm -v`.
-
-- **PostgreSQL**: Install and configure PostgreSQL.
-  - Create a PostgreSQL database (e.g., `irctc_railway_db`).
-
-- **Prisma CLI**: Install Prisma globally.
-  - Run: `npm install -g prisma`.
-
----
-
-## **2. Clone the Repository**
-
 Clone the GitHub repository:
 
 ```bash
-git clone <your-repository-link>
+git clone https://github.com/Shubham-Kumar1/irctc-workIndia.git
 cd irctc-railway-management
 ```
 
 ---
 
-## **3. Install Dependencies**
+## **1. Install Dependencies**
 
 Install the required dependencies:
 
@@ -89,7 +72,7 @@ npm install
 
 ---
 
-## **4. Configure Environment Variables**
+## **2. Configure Environment Variables**
 
 Create a `.env` file in the root directory and add the following environment variables:
 
@@ -105,7 +88,7 @@ PORT=3000
 
 ---
 
-## **5. Set Up the Database**
+## **3. Set Up the Database**
 
 Run Prisma commands to initialize and set up the database:
 
@@ -126,7 +109,7 @@ Run Prisma commands to initialize and set up the database:
 
 ---
 
-## **6. Start the Server**
+## **4. Start the Server**
 
 Start the application server:
 
@@ -138,11 +121,11 @@ The server will run on `http://localhost:3000`.
 
 ---
 
-## **7. Testing API Endpoints**
+## **5. Testing API Endpoints**
 
-### **7.1. Register User**
+### **5.1. Register User**
 
-**POST** `/auth/register`
+**POST** `http://localhost:3000/auth/register`
 
 **Body**:
 ```json
@@ -154,9 +137,9 @@ The server will run on `http://localhost:3000`.
 }
 ```
 
-### **7.2. Login User**
+### **5.2. Login User**
 
-**POST** `/auth/login`
+**POST** `http://localhost:3000/auth/login`
 
 **Body**:
 ```json
@@ -173,9 +156,9 @@ The server will run on `http://localhost:3000`.
 }
 ```
 
-### **7.3. Admin - Add Train**
+### **5.3. Admin - Add Train**
 
-**POST** `/admin/train`
+**POST** `http://localhost:3000/admin/train`
 
 **Headers**:
 ```json
@@ -194,9 +177,9 @@ The server will run on `http://localhost:3000`.
 }
 ```
 
-### **7.4. Check Train Availability**
+### **5.4. Check Train Availability**
 
-**GET** `/booking/availability`
+**GET** `http://localhost:3000/booking/availability`
 
 **Query Parameters**:
 - `source`: `Delhi`
@@ -218,9 +201,9 @@ The server will run on `http://localhost:3000`.
 ]
 ```
 
-### **7.5. Book a Seat**
+### **5.5. Book a Seat**
 
-**POST** `/booking/book`
+**POST** `http://localhost:3000/booking/book`
 
 **Headers**:
 ```json
@@ -244,9 +227,9 @@ The server will run on `http://localhost:3000`.
 }
 ```
 
-### **7.6. Get Booking Details**
+### **5.6. Get Booking Details**
 
-**GET** `/booking/booking`
+**GET** `http://localhost:3000/booking/booking`
 
 **Headers**:
 ```json
@@ -274,7 +257,7 @@ The server will run on `http://localhost:3000`.
 
 ---
 
-## **8. Example Dummy Data to Test**
+## **6. Example Dummy Data to Test**
 
 1. **Register a new user** (with role as `user`).
 2. **Login** with the registered email and password to receive the JWT token.
@@ -285,25 +268,5 @@ The server will run on `http://localhost:3000`.
 ## **9. Notes**
 
 - Ensure to replace placeholder values like `your_admin_api_key` and `your_jwt_secret_key` with actual values.
-- Use **Postman** or **cURL** to test the API endpoints effectively.
+- Use **Postman** to test the API endpoints effectively.
 - The JWT token is required for any user or booking-related operations. Store it securely.
-
----
-
-## **10. License**
-
-This project is licensed under the MIT License.
-```
-
----
-
-### **How to Test**
-
-1. **Register a User** using `/auth/register` endpoint.
-2. **Login** to receive the JWT token using `/auth/login`.
-3. **Test Admin API** (Add Train) using `/admin/train`.
-4. **Test User Operations**:
-   - Check train availability via `/booking/availability`.
-   - Book a seat via `/booking/book`.
-   - View booking details via `/booking/booking`.
-   
